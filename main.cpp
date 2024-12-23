@@ -5,16 +5,14 @@
 #include "cpuPaddle.h"
 #include "setting.h"
 
+const int screenWidth = 1280;
+const int screenHeight = 800;
+
 Ball ball;
 Paddle player;
 CpuPaddle cpu;
 
-int main() {
-    printf("Hello world!\n");
-
-    const int screenWidth = 1280;
-    const int screenHeight = 800;
-
+void InitGame(int screenWidth, int screenHeight) {
     InitWindow(screenWidth, screenHeight, "Pong");
     SetTargetFPS(60);
 
@@ -35,28 +33,42 @@ int main() {
     cpu.x = 10;
     cpu.y = screenHeight / 2 - cpu.height / 2;
     cpu.speed = 6;
+}
+
+void UpdateGame() {
+    ball.Update();
+    player.Update();
+    cpu.Update(ball.y);
+
+    ball.speedX = CheckCollisionCircleRec(Vector2{ball.x, ball.y}, ball.radius, Rectangle{player.x, player.y, player.width, player.height}) ?
+        ball.speedX * -1 : ball.speedX;
+    ball.speedX = CheckCollisionCircleRec(Vector2{ball.x, ball.y}, ball.radius, Rectangle{cpu.x, cpu.y, cpu.width, cpu.height}) ?
+        ball.speedX * -1 : ball.speedX;
+}
+
+void DrawGame(int screenWidth, int screenHeight) {
+    BeginDrawing();
+    ClearBackground(Green);
+    DrawLine(screenWidth / 2, 0, screenWidth / 2, screenHeight, WHITE);
+
+    ball.Draw();
+    player.Draw();
+    cpu.Draw();
+
+    DrawText(TextFormat("%i", ball.cpuScore), screenWidth/4 -20, 20, 80, WHITE);
+    DrawText(TextFormat("%i", ball.playerScore), 3*screenWidth/4 -20, 20, 80, WHITE);
+
+    EndDrawing();
+}
+
+int main() {
+    printf("Hello world!\n");
+
+    InitGame(screenWidth, screenHeight);
 
     while (WindowShouldClose() == false) {
-        BeginDrawing();
-
-        ball.Update();
-        player.Update();
-        cpu.Update(ball.y);
-
-        ball.speedX = CheckCollisionCircleRec(Vector2{ball.x, ball.y}, ball.radius, Rectangle{player.x, player.y, player.width, player.height}) ?
-            ball.speedX * -1 : ball.speedX;
-        ball.speedX = CheckCollisionCircleRec(Vector2{ball.x, ball.y}, ball.radius, Rectangle{cpu.x, cpu.y, cpu.width, cpu.height}) ?
-            ball.speedX * -1 : ball.speedX;
-
-        ClearBackground(Green);
-        DrawLine(screenWidth / 2, 0, screenWidth / 2, screenHeight, WHITE);
-        ball.Draw();
-        player.Draw();
-        cpu.Draw();
-        DrawText(TextFormat("%i", ball.cpuScore), screenWidth/4 -20, 20, 80, WHITE);
-        DrawText(TextFormat("%i", ball.playerScore), 3*screenWidth/4 -20, 20, 80, WHITE);
-
-        EndDrawing();
+        UpdateGame();
+        DrawGame(screenWidth, screenHeight);
     }
 
     CloseWindow();
