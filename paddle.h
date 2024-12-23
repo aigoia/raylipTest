@@ -1,6 +1,4 @@
-#ifndef PADDLE_H
-#define PADDLE_H
-
+#pragma once
 #include "raylib.h"
 
 class Paddle {
@@ -26,5 +24,3 @@ public:
         LimitMovement();
     }
 };
-
-#endif

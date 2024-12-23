@@ -1,6 +1,4 @@
-#ifndef BALL_H
-#define BALL_H
-
+#pragma once
 #include "raylib.h"
 #include "setting.h"
 
@@ -36,5 +34,3 @@ public:
         return score + 1;
     }
 };
-
-#endif

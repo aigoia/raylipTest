@@ -1,6 +1,4 @@
-#ifndef CPU_PADDLE_H
-#define CPU_PADDLE_H
-
+#pragma once
 #include "paddle.h"
 
 class CpuPaddle : public Paddle {
@@ -12,5 +10,3 @@ public:
         LimitMovement();
     }
 };
-
-#endif
