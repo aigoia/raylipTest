@@ -24,8 +24,8 @@ public:
     }
 
     int ResetBall(int score) {
-        x = GetScreenWidth()/2;
-        y = GetScreenHeight()/2;
+        x = GetScreenWidth() / 2;
+        y = GetScreenHeight() / 2;
 
         int speedChoices[2] = {-1, 1};
         speedX *= speedChoices[GetRandomValue(0, 1)];

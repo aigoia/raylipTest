@@ -5,34 +5,31 @@
 #include "cpuPaddle.h"
 #include "setting.h"
 
-const int screenWidth = 1280;
-const int screenHeight = 800;
-
 Ball ball;
 Paddle player;
 CpuPaddle cpu;
 
 void InitGame(int screenWidth, int screenHeight) {
     InitWindow(screenWidth, screenHeight, "Pong");
-    SetTargetFPS(60);
+    SetTargetFPS(Frame);
 
-    ball.radius = 12;
+    ball.radius = BallSize;
     ball.x = screenWidth / 2;
     ball.y = screenHeight / 2;
-    ball.speedX = 7;
-    ball.speedY = 7;
+    ball.speedX = BallSpeed;
+    ball.speedY = BallSpeed;
 
-    player.width = 25;
-    player.height = 120;
-    player.x = screenWidth - player.width - 10;
+    player.width = PaddleWidth;
+    player.height = PaddleHeight;
+    player.x = screenWidth - player.width - PaddleMargin;
     player.y = screenHeight / 2 - player.height / 2;
-    player.speed = 12;
+    player.speed = PlayerSpeed;
 
-    cpu.width = 25;
-    cpu.height = 120;
-    cpu.x = 10;
+    cpu.width = PaddleWidth;
+    cpu.height = PaddleHeight;
+    cpu.x = PaddleMargin;
     cpu.y = screenHeight / 2 - cpu.height / 2;
-    cpu.speed = 6;
+    cpu.speed = CpuSpeed;
 }
 
 void UpdateGame() {
@@ -55,8 +52,8 @@ void DrawGame(int screenWidth, int screenHeight) {
     player.Draw();
     cpu.Draw();
 
-    DrawText(TextFormat("%i", ball.cpuScore), screenWidth/4 -20, 20, 80, WHITE);
-    DrawText(TextFormat("%i", ball.playerScore), 3*screenWidth/4 -20, 20, 80, WHITE);
+    DrawText(TextFormat("%i", ball.cpuScore), screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, WHITE);
+    DrawText(TextFormat("%i", ball.playerScore), 3 *  screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, WHITE);
 
     EndDrawing();
 }
@@ -64,11 +61,11 @@ void DrawGame(int screenWidth, int screenHeight) {
 int main() {
     printf("Hello world!\n");
 
-    InitGame(screenWidth, screenHeight);
+    InitGame(ScreenWidth, ScreenHeight);
 
     while (WindowShouldClose() == false) {
         UpdateGame();
-        DrawGame(screenWidth, screenHeight);
+        DrawGame(ScreenWidth, ScreenHeight);
     }
 
     CloseWindow();
