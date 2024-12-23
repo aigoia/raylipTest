@@ -5,31 +5,31 @@
 class Ball {
 public:
     float x, y;
-    int speed_x, speed_y;
+    int speedX, speedY;
     int radius;
-    int player_score = 0;
-    int cpu_score = 0;
+    int playerScore = 0;
+    int cpuScore = 0;
 
     void Draw() {
         DrawCircle(x, y, radius, Yellow);
     }
 
     void Update() {
-        x += speed_x;
-        y += speed_y;
+        x += speedX;
+        y += speedY;
 
-        speed_y = y + radius >= GetScreenHeight() || y - radius <= 0 ? speed_y * -1 : speed_y;
-        cpu_score = x + radius >= GetScreenWidth() ? ResetBall(cpu_score) : cpu_score;
-        player_score = x - radius <= 0 ? ResetBall(player_score) + 1 : player_score;
+        speedY = y + radius >= GetScreenHeight() || y - radius <= 0 ? speedY * -1 : speedY;
+        cpuScore = x + radius >= GetScreenWidth() ? ResetBall(cpuScore) : cpuScore;
+        playerScore = x - radius <= 0 ? ResetBall(playerScore) + 1 : playerScore;
     }
 
     int ResetBall(int score) {
         x = GetScreenWidth()/2;
         y = GetScreenHeight()/2;
 
-        int speed_choices[2] = {-1, 1};
-        speed_x *= speed_choices[GetRandomValue(0, 1)];
-        speed_y *= speed_choices[GetRandomValue(0, 1)];
+        int speedChoices[2] = {-1, 1};
+        speedX *= speedChoices[GetRandomValue(0, 1)];
+        speedY *= speedChoices[GetRandomValue(0, 1)];
 
         return score + 1;
     }
