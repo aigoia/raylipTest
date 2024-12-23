@@ -10,7 +10,7 @@ Paddle player;
 CpuPaddle cpu;
 
 void InitGame(int screenWidth, int screenHeight) {
-    InitWindow(screenWidth, screenHeight, "Pong");
+    InitWindow(screenWidth, screenHeight, GameName);
     SetTargetFPS(Frame);
 
     ball.radius = BallSize;
