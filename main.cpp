@@ -47,7 +47,6 @@ void CheckGame() {
     };
 }
 
-
 void InitGame(int screenWidth, int screenHeight) {
     InitWindow(screenWidth, screenHeight, GameName);
     SetTargetFPS(Frame);
@@ -73,7 +72,6 @@ void InitGame(int screenWidth, int screenHeight) {
     Countdown(InitCount, ScreenWidth, ScreenHeight);
     isInit = true;
 }
-
 
 void UpdateGame() {
     ball.Update();
