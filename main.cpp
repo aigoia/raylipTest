@@ -52,6 +52,7 @@ void DrawGame(int screenWidth, int screenHeight) {
     ball.Draw();
     player.Draw();
     cpu.Draw();
+    
 
     DrawText(TextFormat("%i", ball.cpuScore), screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, WHITE);
     DrawText(TextFormat("%i", ball.playerScore), 3 *  screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, WHITE);
