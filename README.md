@@ -1,7 +1,7 @@
+# Librariy 
 
-# Libraries 
-
-
+# Run
+bash build.bash
 
 
 
