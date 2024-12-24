@@ -61,7 +61,7 @@ void DrawGame(int screenWidth, int screenHeight) {
 }
 
 int main() {
-    print("Hello world!");
+    print("Hello World!");
 
     InitGame(ScreenWidth, ScreenHeight);
 

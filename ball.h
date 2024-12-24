@@ -34,9 +34,9 @@ public:
         positions.push_back((cpuScore == playerScore) ? 1 : 2);
         positions.push_back((cpuScore == playerScore) ? 3 : 2);
 
-        for (auto& pos : positions) {pos = pos * GetScreenHeight() / 4;}
-
         print_vector(positions);
+
+        for (auto& pos : positions) {pos = pos * GetScreenHeight() / 4;}
         
         x = GetScreenHeight() / 2;
         y = positions[GetRandomValue(0, positions.size() - 1)];
