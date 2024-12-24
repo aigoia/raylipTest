@@ -1,7 +1,7 @@
 # Librariy 
 
-# Run
-bash build.bash
+# Quickstart
+`bash build.bash`
 
 
 
