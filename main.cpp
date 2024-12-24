@@ -1,9 +1,9 @@
 #include "raylib.h"
 #include <cstdio>
-#include "ball.h"
-#include "paddle.h"
-#include "cpuPaddle.h"
-#include "setting.h"
+#include "ball.cpp"
+#include "paddle.cpp"
+#include "cpuPaddle.cpp"
+#include "setting.cpp"
 #include <vector>
 
 Ball ball;
@@ -52,7 +52,6 @@ void DrawGame(int screenWidth, int screenHeight) {
     ball.Draw();
     player.Draw();
     cpu.Draw();
-    
 
     DrawText(TextFormat("%i", ball.cpuScore), screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, WHITE);
     DrawText(TextFormat("%i", ball.playerScore), 3 *  screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, WHITE);

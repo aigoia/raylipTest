@@ -1,9 +1,12 @@
 #pragma once
 #include "raylib.h"
-#include "setting.h"
+#include "setting.cpp"
 #include <vector>
+#include <cstdio>
+#include "utility.cpp"
 
 using namespace std;
+using namespace utility;
 
 class Ball {
 public:
@@ -27,15 +30,16 @@ public:
     }
 
     int ResetBall(int score) {
-        vector<int> positions = {
-            (GetScreenWidth() * 2) / 4,
-        };
+        vector<int> positions = {2};
+        positions.push_back((cpuScore == playerScore) ? 1 : 2);
+        positions.push_back((cpuScore == playerScore) ? 3 : 2);
 
-        positions.insert(positions.begin(), (GetScreenWidth() * 1) / 4);
-        positions.insert(positions.end(), GetScreenWidth() * 2);
+        for (auto& pos : positions) {pos = pos * GetScreenHeight() / 4;}
 
+        print_vector(positions);
+        
         x = GetScreenHeight() / 2;
-        y = positions[GetRandomValue(0, positions.size() -1)];
+        y = positions[GetRandomValue(0, positions.size() - 1)];
         
         int speedChoices[2] = {-1, 1};
         speedX = speedX * speedChoices[GetRandomValue(0, 1)];

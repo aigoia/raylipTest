@@ -1,5 +1,5 @@
 #pragma once
-#include "paddle.h"
+#include "paddle.cpp"
 
 class CpuPaddle : public Paddle {
 public:
