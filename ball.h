@@ -15,8 +15,8 @@ public:
     }
 
     void Update() {
-        x += speedX;
-        y += speedY;
+        x = x + speedX;
+        y = y + speedY;
 
         speedY = y + radius >= GetScreenHeight() || y - radius <= 0 ? speedY * -1 : speedY;
         cpuScore = x + radius >= GetScreenWidth() ? ResetBall(cpuScore) : cpuScore;
@@ -28,8 +28,8 @@ public:
         y = GetScreenHeight() / 2;
 
         int speedChoices[2] = {-1, 1};
-        speedX *= speedChoices[GetRandomValue(0, 1)];
-        speedY *= speedChoices[GetRandomValue(0, 1)];
+        speedX = speedX * speedChoices[GetRandomValue(0, 1)];
+        speedY = speedX * speedChoices[GetRandomValue(0, 1)];
 
         return score + 1;
     }
