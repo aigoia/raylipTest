@@ -5,7 +5,7 @@
 #include "helper.h"
 
 using namespace std;
-using namespace utility;
+using namespace helper;
 
 class Ball {
 public:

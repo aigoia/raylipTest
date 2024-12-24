@@ -2,8 +2,9 @@
 #include "raylib.h"
 #include <vector>
 #include <iostream>
+#include <string>
 
-namespace utility {
+namespace helper {
     template <typename T>
     void print(const T& value) {
         std::cout << value << std::endl;

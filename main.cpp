@@ -6,7 +6,6 @@
 #include <string>
 #include <thread>
 #include <chrono>
-#include <coroutine>
 
 #include "ball.h"
 #include "paddle.h"
@@ -14,34 +13,29 @@
 #include "setting.h"
 
 using namespace std;
+using namespace helper;
+
+bool isInit = false;
 
 Ball ball;
 Paddle player;
 CpuPaddle cpu;
 
-class CountdownTask {
-public:
-    class promise_type {
-        public:
-        CountdownTask get_return_object() { return CountdownTask{}; }
-        suspend_never initial_suspend() { return {}; }
-        suspend_always final_suspend() noexcept { return {}; }
-        void return_void() {}
-        void unhandled_exception() { terminate(); }
-    };
-};
-
-CountdownTask Countdown(int start, int screenWidth, int screenHeight) {
+void Countdown(int start, int screenWidth, int screenHeight) {
     for (int i = start; i > 0; --i) {
         BeginDrawing();
         ClearBackground(Snow);
 
-        DrawText(TextFormat("%i", ball.cpuScore), screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, Mint);
-        DrawText(TextFormat("%i", ball.playerScore), 3 *  screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, Mint);
+        DrawText(TextFormat("%d", i), GetScreenWidth() / 2 - ScoreMargin, GetScreenHeight() / 2 - ScoreMargin * 2, ScoreSize, Mint);
 
+        if (isInit)
+        {
+            DrawText(TextFormat("%i", ball.cpuScore), screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, Mint);
+            DrawText(TextFormat("%i", ball.playerScore), 3 *  screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, Mint);
+        }
+        
         EndDrawing();
-        this_thread::sleep_for(chrono::seconds(1)); 
-        co_await suspend_always{}; 
+        this_thread::sleep_for(chrono::seconds(CountTime)); 
     }
 }
 
@@ -67,7 +61,8 @@ void InitGame(int screenWidth, int screenHeight) {
     cpu.y = screenHeight / 2 - cpu.height / 2;
     cpu.speed = CpuSpeed;
 
-    auto countdown = Countdown(InitCount, screenWidth, screenHeight);
+    Countdown(InitCount, ScreenWidth, ScreenHeight);
+    isInit = true;
 }
 
 
