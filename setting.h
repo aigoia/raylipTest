@@ -6,6 +6,8 @@ const char* GameName = "Pong";
 const int Frame = 60;
 const int ScreenWidth = 1280;
 const int ScreenHeight = 800;
+const float CountTime = 0.3;
+const int InitCount = 3;
 
 // Colors
 const Color Mint = {72, 209, 204, 255};
