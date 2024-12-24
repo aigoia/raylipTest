@@ -42,6 +42,7 @@ public:
         positions.push_back((cpuScore == playerScore) ? 1 : 2);
         positions.push_back((cpuScore == playerScore) ? 3 : 2);
 
+        print("start positions:");
         print_vector(positions);
 
         for (auto& pos : positions) {pos = pos * GetScreenHeight() / 4;}
