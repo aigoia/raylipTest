@@ -5,7 +5,7 @@
 #include "cpu_paddle.h"
 #include "setting.h"
 #include <vector>
-#include "utility.h"
+#include "helper.h"
 
 Ball ball;
 Paddle player;
