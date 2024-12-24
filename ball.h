@@ -2,7 +2,6 @@
 #include "raylib.h"
 #include "setting.h"
 #include <vector>
-#include <cstdio>
 #include "helper.h"
 
 using namespace std;
