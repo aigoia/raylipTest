@@ -35,9 +35,18 @@ void Countdown(int start, int screenWidth, int screenHeight) {
         }
         
         EndDrawing();
-        this_thread::sleep_for(chrono::seconds(CountTime)); 
+        chrono::duration<float> duration(CountTime); 
+        this_thread::sleep_for(duration);
     }
 }
+
+void CheckGame() {
+    if  (ball.CheckOutOfBounds() == true) {
+        ball.out = false;
+        Countdown(InitCount, GetScreenWidth(), GetScreenHeight());
+    };
+}
+
 
 void InitGame(int screenWidth, int screenHeight) {
     InitWindow(screenWidth, screenHeight, GameName);
@@ -96,8 +105,10 @@ int main() {
     print("Hello World!");
 
     InitGame(ScreenWidth, ScreenHeight);
+    bool wait = false;
 
     while (WindowShouldClose() == false) {
+        CheckGame();
         UpdateGame();
         DrawGame(ScreenWidth, ScreenHeight);
     }

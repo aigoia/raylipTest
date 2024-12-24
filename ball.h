@@ -15,6 +15,8 @@ public:
     int playerScore = 0;
     int cpuScore = 0;
 
+    bool out = false;
+
     void Draw() {
         DrawCircle(x, y, radius, Gold);
     }
@@ -24,11 +26,18 @@ public:
         y = y + speedY;
 
         speedY = y + radius >= GetScreenHeight() || y - radius <= 0 ? speedY * -1 : speedY;
+    }
+
+    bool CheckOutOfBounds() {
         cpuScore = x + radius >= GetScreenWidth() ? ResetBall(cpuScore) : cpuScore;
         playerScore = x - radius <= 0 ? ResetBall(playerScore) + 1 : playerScore;
+
+        return out;
     }
 
     int ResetBall(int score) {
+        out = true;
+
         vector<int> positions = {2};
         positions.push_back((cpuScore == playerScore) ? 1 : 2);
         positions.push_back((cpuScore == playerScore) ? 3 : 2);
@@ -43,7 +52,6 @@ public:
         int speedChoices[2] = {-1, 1};
         speedX = speedX * speedChoices[GetRandomValue(0, 1)];
         speedY = speedX * speedChoices[GetRandomValue(0, 1)];
-
         return score + 1;
     }
 };
