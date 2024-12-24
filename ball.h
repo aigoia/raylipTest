@@ -32,7 +32,7 @@ public:
         };
 
         positions.insert(positions.begin(), (GetScreenWidth() * 1) / 4);
-        postions.insert(positions.end(), GetScreenWidth() * 2);
+        positions.insert(positions.end(), GetScreenWidth() * 2);
 
         x = GetScreenHeight() / 2;
         y = positions[GetRandomValue(0, positions.size() -1)];
