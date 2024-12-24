@@ -15,7 +15,7 @@ public:
     int speed;
 
     void Draw() {
-        DrawRectangle(x, y, width, height, WHITE);
+        DrawRectangle(x, y, width, height, Snow);
     }
 
     void Update() {

@@ -8,8 +8,9 @@ const int ScreenWidth = 1280;
 const int ScreenHeight = 800;
 
 // Colors
-const Color Green = {38, 185, 154, 255};
-const Color Yellow = {243, 213, 91, 255};
+const Color Mint = {72, 209, 204, 255};
+const Color Gold = {255, 215, 0, 255};
+const Color Snow = {255, 255, 240, 255};
 
 // Margins 
 const int PaddleMargin = 10;

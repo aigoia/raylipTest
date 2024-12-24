@@ -47,15 +47,15 @@ void UpdateGame() {
 
 void DrawGame(int screenWidth, int screenHeight) {
     BeginDrawing();
-    ClearBackground(Green);
-    DrawLine(screenWidth / 2, 0, screenWidth / 2, screenHeight, WHITE);
+    ClearBackground(Mint);
+    DrawLine(screenWidth / 2, 0, screenWidth / 2, screenHeight, Snow);
 
     ball.Draw();
     player.Draw();
     cpu.Draw();
 
-    DrawText(TextFormat("%i", ball.cpuScore), screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, WHITE);
-    DrawText(TextFormat("%i", ball.playerScore), 3 *  screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, WHITE);
+    DrawText(TextFormat("%i", ball.cpuScore), screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, Snow);
+    DrawText(TextFormat("%i", ball.playerScore), 3 *  screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, Snow);
 
     EndDrawing();
 }

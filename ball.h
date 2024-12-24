@@ -16,7 +16,7 @@ public:
     int cpuScore = 0;
 
     void Draw() {
-        DrawCircle(x, y, radius, Yellow);
+        DrawCircle(x, y, radius, Gold);
     }
 
     void Update() {
