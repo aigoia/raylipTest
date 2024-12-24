@@ -15,4 +15,15 @@ namespace utility {
         }
         std::cout << "]" << std::endl;
     }
+
+    template <typename T>
+    void print(const T& value) {
+        std::cout << value << std::endl;
+    }
+
+    template <typename T, typename... Args>
+    void print(const T& first, const Args&... args) {
+        std::cout << first << " ";
+        print(args...); 
+    }
 }

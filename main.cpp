@@ -5,6 +5,7 @@
 #include "cpuPaddle.cpp"
 #include "setting.cpp"
 #include <vector>
+#include "utility.cpp"
 
 Ball ball;
 Paddle player;
@@ -60,7 +61,7 @@ void DrawGame(int screenWidth, int screenHeight) {
 }
 
 int main() {
-    printf("Hello world!\n");
+    print("Hello world!");
 
     InitGame(ScreenWidth, ScreenHeight);
 
