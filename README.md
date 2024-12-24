@@ -1,6 +1,6 @@
 
 # Libraries 
-[pyray](/https://github.com/electronstudio/raylib-python-cffi/)
+[pyray](https://github.com/electronstudio/raylib-python-cffi)
 
 
 
