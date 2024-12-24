@@ -15,7 +15,7 @@
 using namespace std;
 using namespace helper;
 
-bool isInit = false;
+bool initDone = false;
 
 Ball ball;
 Paddle player;
@@ -28,7 +28,7 @@ void Countdown(int start, int screenWidth, int screenHeight) {
 
         DrawText(TextFormat("%d", i), GetScreenWidth() / 2 - ScoreMargin, GetScreenHeight() / 2 - ScoreMargin * 2, ScoreSize, Mint);
 
-        if (isInit)
+        if (initDone)
         {
             DrawText(TextFormat("%i", ball.cpuScore), screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, Mint);
             DrawText(TextFormat("%i", ball.playerScore), 3 *  screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, Mint);
@@ -70,7 +70,7 @@ void InitGame(int screenWidth, int screenHeight) {
     cpu.speed = CpuSpeed;
 
     Countdown(InitCount, ScreenWidth, ScreenHeight);
-    isInit = true;
+    initDone = true;
 }
 
 void UpdateGame() {
