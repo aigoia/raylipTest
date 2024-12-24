@@ -1,9 +1,9 @@
 #pragma once
 #include "raylib.h"
-#include "setting.cpp"
+#include "setting.h"
 #include <vector>
 #include <cstdio>
-#include "utility.cpp"
+#include "utility.h"
 
 using namespace std;
 using namespace utility;

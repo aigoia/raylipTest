@@ -1,11 +1,11 @@
 #include "raylib.h"
 #include <cstdio>
-#include "ball.cpp"
-#include "paddle.cpp"
-#include "cpuPaddle.cpp"
-#include "setting.cpp"
+#include "ball.h"
+#include "paddle.h"
+#include "cpu_paddle.h"
+#include "setting.h"
 #include <vector>
-#include "utility.cpp"
+#include "utility.h"
 
 Ball ball;
 Paddle player;
