@@ -89,7 +89,8 @@ void UpdateGame() {
 void DrawGame(int screenWidth, int screenHeight) {
     BeginDrawing();
     ClearBackground(Mint);
-    DrawLine(screenWidth / 2, 0, screenWidth / 2, screenHeight, Snow);
+    DrawLine(screenWidth / 2, 0, screenWidth / 2 - 1, screenHeight, Snow);
+    DrawLine(screenWidth / 2, 0, screenWidth / 2 + 1, screenHeight, Snow);
 
     ball.Draw();
     player.Draw();
