@@ -1,4 +1,4 @@
-# Librariy
+# Library
 [Raylib](https://www.raylib.com/index.html)
 
 # Quickstart
