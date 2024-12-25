@@ -101,7 +101,7 @@ void DrawGame(int screenWidth, int screenHeight) {
 }
 
 int main() {
-    print("hello world!");
+    print("hello pong!");
 
     InitGame(ScreenWidth, ScreenHeight);
     bool wait = false;
