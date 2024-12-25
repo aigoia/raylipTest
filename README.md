@@ -1,7 +1,7 @@
 # Library
 [Raylib](https://www.raylib.com/index.html)
 
-# Quickstart
+## Quick start
 ## Linux
 <div class="code-box">
   <pre><code>bash build.bash</code></pre>
