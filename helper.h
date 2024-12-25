@@ -5,6 +5,7 @@
 #include <string>
 
 namespace helper {
+       // Base template for print (Python-style)
     template <typename T>
     void print(const T& value) {
         std::cout << value << std::endl;
@@ -12,22 +13,34 @@ namespace helper {
 
     template <typename T, typename... Args>
     void print(const T& first, const Args&... args) {
-        std::cout << first << " ";
-        print(args...); 
+        std::cout << first << " " << std::endl;
+        print(args...);
     }
 
+    void println() {
+        std::cout << std::endl;
+    }
+
+    template <typename T, typename... Args>
+    void println(const T& first, const Args&... args) {
+        print(first, args...);
+        std::cout << std::endl;
+    }
+
+    // Print vector
     template <typename T>
     void print_vector(const std::vector<T>& vectorObject, const std::string& label = "Vector") {
         std::cout << label << ": [";
         for (size_t i = 0; i < vectorObject.size(); ++i) {
             std::cout << vectorObject[i];
             if (i < vectorObject.size() - 1) {
-                std::cout << ", ";
+                std::cout << ", " ;
             }
         }
         std::cout << "]" << std::endl;
     }
 
+    // Print array (generic)
     template <typename T>
     void print_array(const T& arr) {
         std::cout << "[";
@@ -40,6 +53,7 @@ namespace helper {
         std::cout << "]" << std::endl;
     }
 
+    // Print array (fixed-size)
     template <typename T, size_t N>
     void print_array(const T (&arr)[N]) {
         std::cout << "[";
