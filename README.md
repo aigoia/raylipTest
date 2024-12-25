@@ -2,7 +2,7 @@
 [Raylib](https://www.raylib.com/index.html)
 
 ## Quick start
-## Linux
+### Linux
 <div class="code-box">
   <pre><code>bash build.bash</code></pre>
   <button onclick="copyCode(this)"></button>
