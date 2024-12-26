@@ -39,8 +39,13 @@ public:
         out = true;
 
         vector<int> positions = {2};
-        positions.push_back((cpuScore == playerScore) ? 1 : 2);
-        positions.push_back((cpuScore == playerScore) ? 3 : 2);
+        positions.push_back((cpuScore == playerScore) ? 2 : 1);
+        positions.push_back((cpuScore == playerScore) ? 2 : 3);
+
+        vector<int> filtered_positions;
+        for (int pos : positions) {pos != 2 ? filtered_positions.push_back(pos) : void();}
+        filtered_positions.push_back(2);
+        positions = filtered_positions;
 
         print("start positions:");
         print_vector(positions);
