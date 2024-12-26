@@ -39,18 +39,23 @@ public:
         out = true;
 
         vector<int> positions = {2};
-        positions.push_back((cpuScore == playerScore) ? 2 : 1);
-        positions.push_back((cpuScore == playerScore) ? 2 : 3);
+        positions.push_back(cpuScore == playerScore ? 2 : 1);
+        positions.push_back(cpuScore == playerScore ? 2 : 3);
 
-        vector<int> filtered_positions;
-        for (auto& pos : positions) {pos != 2 ? filtered_positions.push_back(pos) : void();}
-        filtered_positions.push_back(2);
+        vector<int> filtered_positions;   
+        for (auto& i : positions) {
+            bool addedCenter = i != 2 || !addedCenter ? 
+                filtered_positions.push_back(i),
+                addedCenter = i == 2
+            : addedCenter;
+        } 
+
         positions = filtered_positions;
 
         print("start positions:");
         print_vector(positions);
 
-        for (auto& pos : positions) {pos = pos * GetScreenHeight() / 4;}
+        for (auto& i : positions) {i = i * GetScreenHeight() / 4;}
         
         x = GetScreenHeight() / 2;
         y = positions[GetRandomValue(0, positions.size() - 1)];

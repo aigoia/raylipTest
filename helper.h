@@ -5,9 +5,9 @@
 #include <string>
 
 namespace helper {
-       // Base template for print (Python-style)
+    // Base template for print (Python-style)
     template <typename T>
-    void print(const T& value) {
+    void print(T value) {
         std::cout << value << std::endl;
     }
 
@@ -25,6 +25,10 @@ namespace helper {
     void println(const T& first, const Args&... args) {
         print(first, args...);
         std::cout << std::endl;
+    }
+
+    void print(bool value) {
+        std::cout << (value ? "true" : "false") << std::endl;
     }
 
     // Print vector

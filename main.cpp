@@ -22,7 +22,7 @@ Paddle player;
 CpuPaddle cpu;
 
 void Countdown(int start, int screenWidth, int screenHeight) {
-    for (int i = start; i > 0; --i) {
+    for (auto& i = start; i > 0; --i) {
         BeginDrawing();
         ClearBackground(Snow);
 
@@ -105,7 +105,7 @@ int main() {
     InitGame(ScreenWidth, ScreenHeight);
     bool wait = false;
 
-    while (WindowShouldClose() == false) {
+    while (!WindowShouldClose()) {
         CheckGame();
         UpdateGame();
         DrawGame(ScreenWidth, ScreenHeight);
