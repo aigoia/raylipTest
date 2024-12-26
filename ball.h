@@ -43,7 +43,7 @@ public:
         positions.push_back((cpuScore == playerScore) ? 2 : 3);
 
         vector<int> filtered_positions;
-        for (int pos : positions) {pos != 2 ? filtered_positions.push_back(pos) : void();}
+        for (auto& pos : positions) {pos != 2 ? filtered_positions.push_back(pos) : void();}
         filtered_positions.push_back(2);
         positions = filtered_positions;
 
