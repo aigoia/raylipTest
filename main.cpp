@@ -28,11 +28,10 @@ void Countdown(int start, int screenWidth, int screenHeight) {
 
         DrawText(TextFormat("%d", i), GetScreenWidth() / 2 - ScoreMargin, GetScreenHeight() / 2 - ScoreMargin * 2, ScoreSize, Mint);
 
-        if (initDone)
-        {
-            DrawText(TextFormat("%i", ball.cpuScore), screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, Mint);
-            DrawText(TextFormat("%i", ball.playerScore), 3 *  screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, Mint);
-        }
+        initDone ?
+            DrawText(TextFormat("%i", ball.cpuScore), screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, Mint),
+            DrawText(TextFormat("%i", ball.playerScore), 3 *  screenWidth / 4 - ScoreMargin, ScoreMargin, ScoreSize, Mint)
+        : void();
         
         EndDrawing();
         chrono::duration<float> duration(CountTime); 
@@ -41,10 +40,10 @@ void Countdown(int start, int screenWidth, int screenHeight) {
 }
 
 void CheckGame() {
-    if  (ball.CheckOutOfBounds() == true) {
-        ball.out = false;
-        Countdown(InitCount, GetScreenWidth(), GetScreenHeight());
-    };
+    ball.CheckOutOfBounds() ?
+        ball.out = false,
+        Countdown(InitCount, GetScreenWidth(), GetScreenHeight())
+    : void();
 }
 
 void InitGame(int screenWidth, int screenHeight) {
