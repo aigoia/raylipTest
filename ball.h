@@ -44,10 +44,10 @@ public:
 
         vector<int> filtered_positions;   
         for (auto& i : positions) {
-            bool addedCenter = i != 2 || !addedCenter ? 
+            bool isAdded = (i != 2) || (i == 2 && !isAdded) ? 
                 filtered_positions.push_back(i),
-                addedCenter = i == 2
-            : addedCenter;
+                isAdded = (i == 2)
+            : isAdded;
         } 
 
         positions = filtered_positions;
