@@ -3,6 +3,7 @@
 #include "setting.h"
 #include <vector>
 #include "helper.h"
+#include <algorithm>
 
 using namespace std;
 using namespace helper;
@@ -49,8 +50,12 @@ public:
                 isAdded = (i == 2)
             : isAdded;
         } 
-
         positions = filtered_positions;
+        
+        // vector<int> filtered_positions;
+        // copy_if(positions.begin(), positions.end(), back_inserter(filtered_positions), [](auto& i) {return i != 2;});
+        // filtered_positions.push_back(2);
+        // positions = filtered_positions;
 
         print("start positions:");
         print_vector(positions);
