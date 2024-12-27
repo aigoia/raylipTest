@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 namespace helper {
     // Base template for print (Python-style)
@@ -68,5 +69,13 @@ namespace helper {
             }
         }
         std::cout << "]" << std::endl;
+    }
+
+    // Filter vector
+    template <typename T, typename Func>
+    void filter_vector(std::vector<T>& vectorObject, Func func) {
+        std::vector<T> filtered_vector = {};
+        std::copy_if(vectorObject.begin(), vectorObject.end(), std::back_inserter(filtered_vector), func);
+        vectorObject = std::move(filtered_vector);
     }
 }

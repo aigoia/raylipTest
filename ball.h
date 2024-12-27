@@ -42,20 +42,9 @@ public:
         vector<int> positions = {2};
         positions.push_back(cpuScore == playerScore ? 2 : 1);
         positions.push_back(cpuScore == playerScore ? 2 : 3);
-
-        vector<int> filtered_positions;   
-        for (auto& i : positions) {
-            bool isAdded = (i != 2) || (i == 2 && !isAdded) ? 
-                filtered_positions.push_back(i),
-                isAdded = (i == 2)
-            : isAdded;
-        } 
-        positions = filtered_positions;
         
-        // vector<int> filtered_positions;
-        // copy_if(positions.begin(), positions.end(), back_inserter(filtered_positions), [](auto& i) {return i != 2;});
-        // filtered_positions.push_back(2);
-        // positions = filtered_positions;
+        filter_vector(positions, [](auto& i) {return i != 2;});
+        positions.push_back(2);
 
         print("start positions:");
         print_vector(positions);
