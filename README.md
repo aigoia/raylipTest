@@ -13,7 +13,7 @@ Creating simple games with Raylib is the easiest way to study C++ programming la
 </div>
 
 <div class="code-box">
-  <pre><code>git clone </code></pre>
+  <pre><code>git clone https://github.com/aigoia/raylipTest.git</code></pre>
   <button onclick="copyCode(this)"></button>
 </div>
 
