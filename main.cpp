@@ -6,7 +6,7 @@
 #include <string>
 #include <thread>
 #include <chrono>
-#include <memory> // 스마트 포인터를 위해 추가
+#include <memory> 
 
 #include "ball.h"
 #include "paddle.h"
