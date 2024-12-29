@@ -9,7 +9,7 @@ Creating simple games with Raylib is the easiest way to study C++ programming la
 ### Linux
 
 First install and make Raylib
-- [Raylb](https://github.com/raysan5/raylib/wiki/Working-on-GNU-Linux)
+- [Make Raylib in Linux](https://github.com/raysan5/raylib/wiki/Working-on-GNU-Linux)
 
 <div class="code-box">
   <pre><code>git clone https://github.com/aigoia/raylipTest.git</code></pre>
