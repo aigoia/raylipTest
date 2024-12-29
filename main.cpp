@@ -6,7 +6,7 @@
 #include <string>
 #include <thread>
 #include <chrono>
-#include <memory> 
+#include <memory>
 
 #include "ball.h"
 #include "paddle.h"
@@ -35,7 +35,7 @@ void Countdown(int start, int screenWidth, int screenHeight) {
         }
         
         EndDrawing();
-        chrono::duration<float> duration(CountTime); 
+        chrono::duration<float> duration(CountTime);
         this_thread::sleep_for(duration);
     }
 }
