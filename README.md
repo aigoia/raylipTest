@@ -7,10 +7,6 @@ Creating simple games with Raylib is the easiest way to study C++ programming la
 
 ## Quick start
 ### Linux
-<div class="code-box">
-  <pre><code>bash build.bash</code></pre>
-  <button onclick="copyCode(this)"></button>
-</div>
 
 <div class="code-box">
   <pre><code>git clone https://github.com/aigoia/raylipTest.git</code></pre>
@@ -19,6 +15,11 @@ Creating simple games with Raylib is the easiest way to study C++ programming la
 
 <div class="code-box">
   <pre><code>cd raylipTest</code></pre>
+  <button onclick="copyCode(this)"></button>
+</div>
+
+<div class="code-box">
+  <pre><code>bash build.bash</code></pre>
   <button onclick="copyCode(this)"></button>
 </div>
 
