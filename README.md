@@ -28,4 +28,4 @@ And then, download and run this project.
   <button onclick="copyCode(this)"></button>
 </div>
 
-- [Helper](https://youtu.be/fJfmhhPMV40?si=-qXJhlDw1JctydGR)
+- [How to use bash](https://youtu.be/fJfmhhPMV40?si=-qXJhlDw1JctydGR)
