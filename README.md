@@ -17,10 +17,13 @@ First, install and make Raylib.
 </div>
 
 Install CMake.
+
 <div class="code-box">
   <pre><code>sudo apt install cmake</code></pre>
   <button onclick="copyCode(this)"></button>
 </div>
+
+Install Raylib.
 
 <div class="code-box">
   <pre><code>git clone https://github.com/raysan5/raylib.git raylib
