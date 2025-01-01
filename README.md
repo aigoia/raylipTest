@@ -19,7 +19,7 @@ And then, download and run this project.
 </div>
 
 <div class="code-box">
-  <pre><code>sudo apt install build-essential git</code></pre>
+  <pre><code>sudo apt install libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev libwayland-dev libxkbcommon-dev</code></pre>
   <button onclick="copyCode(this)"></button>
 </div>
 
