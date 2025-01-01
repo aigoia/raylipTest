@@ -14,6 +14,16 @@ First, install and make Raylib.
 And then, download and run this project.
 
 <div class="code-box">
+  <pre><code>sudo apt install build-essential git</code></pre>
+  <button onclick="copyCode(this)"></button>
+</div>
+
+<div class="code-box">
+  <pre><code>sudo apt install build-essential git</code></pre>
+  <button onclick="copyCode(this)"></button>
+</div>
+
+<div class="code-box">
   <pre><code>git clone https://github.com/aigoia/raylipTest.git</code></pre>
   <button onclick="copyCode(this)"></button>
 </div>
