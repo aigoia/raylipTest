@@ -11,12 +11,30 @@ Creating simple games with Raylib is the easiest way to study C++ programming la
 First, install and make Raylib.
 - [Make Raylib in linux](https://github.com/raysan5/raylib/wiki/Working-on-GNU-Linux)
 
-And then, download and run this project.
-
 <div class="code-box">
   <pre><code>sudo apt install build-essential git</code></pre>
   <button onclick="copyCode(this)"></button>
 </div>
+
+Install CMake.
+<div class="code-box">
+  <pre><code>sudo apt install cmake</code></pre>
+  <button onclick="copyCode(this)"></button>
+</div>
+
+<div class="code-box">
+  <pre><code>git clone https://github.com/raysan5/raylib.git raylib
+cd raylib
+mkdir build && cd build
+cmake -DBUILD_SHARED_LIBS=ON ..
+make
+sudo make install
+sudo ldconfig</code></pre>
+  <button onclick="copyCode(this)"></button>
+</div>
+
+
+And then, download and run this project.
 
 <div class="code-box">
   <pre><code>sudo apt install libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev libwayland-dev libxkbcommon-dev</code></pre>
